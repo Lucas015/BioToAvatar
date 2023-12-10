@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <h1>Bio to Avatar</h1>
+  <%= form_tag('/generate_avatar', method: 'post') do %>
+    <%= text_area_tag 'bio', nil, placeholder: 'Write your bio here...', rows: 4, cols: 50 %>
+    <br>
+    <%= submit_tag 'Generate Avatar' %>
+  <% end %>
+</div>

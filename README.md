@@ -43,3 +43,9 @@ To run the application locally you need to follow these steps:
 
 1. Rails 7: MVC framework for building web applications
 2. OpenAI API: Used for generating avatars based on text inputs.
+
+## Screenshots
+
+![Screenshot_!1](./public/screenshot_1.png)
+![Screenshot_!1](./public/screenshot_2.png)
+![Screenshot_!1](./public/screenshot_3.png)

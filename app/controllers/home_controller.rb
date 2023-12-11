@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     @error_message = params[:error_message]
     @avatar_url = params[:avatar_url]
+    @bio = params[:bio]
   end
 
 
@@ -12,14 +13,14 @@ class HomeController < ApplicationController
 
     if response['error']
       error_message = "OpenAI API error: #{response['error']['message']}"
-      redirect_to root_path(error_message: error_message)
+      redirect_to root_path(error_message: error_message, bio: bio)
     else
       if response['data'].present? && response['data'].first['url'].present?
         avatar_url = response['data'].first['url']
-        redirect_to root_path(avatar_url: avatar_url)
+        redirect_to root_path(avatar_url: avatar_url, bio: bio)
       else
         error_message = 'Failed to retrieve image URL'
-        redirect_to root_path(error_message: error_message)
+        redirect_to root_path(error_message: error_message, bio: bio)
       end
     end
   end

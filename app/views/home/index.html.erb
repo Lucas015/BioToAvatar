@@ -7,8 +7,8 @@
     <img src="<%= @avatar_url %>" alt="Avatar" width="300" height="300" style="max-width: 100%; height: auto;">
   <% end %>
   <%= form_tag('home/generate_avatar', method: 'post') do %>
-    <%= text_area_tag 'bio', nil, placeholder: 'Write your bio here...', rows: 4, cols: 50 %>
+    <%= text_area_tag 'bio', @bio, placeholder: 'Write your bio here...', rows: 4, cols: 50 %>
     <br>
-    <%= submit_tag 'Generate Avatar' %>
+    <%= submit_tag 'Generate Avatar', data: { disable_with: 'Generating...' }, id: 'generate_avatar_button' %>
   <% end %>
 </div>
